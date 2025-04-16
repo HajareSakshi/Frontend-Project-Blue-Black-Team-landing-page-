@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Black Team</title>
+<style>
+body{
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #030726;
+color: white;
+text-align: center;
+}
+header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #030726;
+padding: 15px 50px;
+}
+.logo-container {
+display: flex;
+align-items: center;
+gap: 10px; 
+}
+.logo {
+width: 50px;
+height: 50px;
+border-radius: 50%; 
+object-fit: cover;
+}
+.logo-name {
+font-size: 22px;
+font-weight: bold;
+color: white;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+/* Navigation */
+nav ul {
+list-style: none;
+display: flex;
+gap: 25px;
+}
+nav ul li a {
+color: white;
+text-decoration: none;
+font-size: 16px;
+font-weight: 500;
+transition: color 0.3s ease-in-out;
+}
+nav ul li a:hover {
+    color: #00aaff;
+}
+/* Hero section */
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    background-color: #012a4a;
+    padding: 50px;
+    height: 80vh;
+}
+.hero-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    gap: 50px; 
+}
+.hero-text {
+    flex: 1;
+}
+.hero-text h1 {
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+.hero-text p {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+.hero-text button {
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+.hero-text button:hover {
+    background-color: #0088cc;
+}
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+}
+/* About section */
+.about-container {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+padding: 20px;
+}
+.about-box {
+background: linear-gradient(135deg, #012a4a, #013a63);
+padding: 20px;
+border-radius: 10px;
+width: 300px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+transition: transform 0.3s ease-in-out;
+}
+.about-box:hover {
+transform: scale(1.05);
+}
+.about-box h3 {
+color: #007bff;
+}
+/* Project section */
+#projects {
+text-align: center;
+padding: 50px 20px;
+background: linear-gradient(to bottom, #012a4a, #013a63);
+border-radius: 10px;
+}
+h2 {
+font-size: 2rem;
+margin-bottom: 10px;
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+.project-grid {
+display: flex;
+justify-content: center;
+gap: 30px;
+flex-wrap: wrap;
+margin-top: 20px;
+}
+.project-card {
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(10px);
+border-radius: 15px;
+padding: 20px;
+width: 250px;
+text-align: center;
+box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.project-card:hover {
+transform: scale(1.05);
+box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+.project-card img {
+width: 100%;
+height: auto;
+border-radius: 10px;
+}
+h3 {
+margin: 15px 0;
+font-size: 1.5rem;
+color: #00aaff;
+}
+p{
+font-size: 1rem;
+color: #f1f1f1;
+}
+.project-btn {
+background-color: #007bff;
+color: white;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+margin-top: 10px;
+border-radius: 5px;
+transition: 0.3s ease-in-out;
+}
+.project-btn:hover {
+border: 2px solid black;
+background-color: #0056b3;
+}
+button:hover {
+border: 2px solid black;
+background-color: #0056b3;
+}
+.project-grid, .team-grid {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+padding: 20px;
+}
+.project-card, .team-member {
+background-color: #013a63;
+padding: 15px;
+border-radius: 10px;
+width: 200px;
+}
+.team-member img, .project-card img {
+width: 100%;
+border-radius: 5px;
+}
+/* Team Section */
+#team {
+text-align: center;
+padding: 60px 20px;
+background-color: #030726; 
+}
+#team h2 {
+font-size: 32px;
+color: #00aaff;
+margin-bottom: 30px;
+}
+.team-grid {
+display: flex;
+justify-content: center;
+gap: 30px;
+flex-wrap: wrap;
+}
+.team-member {
+background: #0a0f2c; 
+border-radius: 12px;
+box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3); 
+padding: 20px;
+width: 250px;
+transition: transform 0.3s ease-in-out;
+text-align: center;
+border: 2px solid rgba(0, 170, 255, 0.5); 
+}
+.team-member:hover {
+transform: translateY(-10px);
+box-shadow: 0 4px 25px rgba(0, 170, 255, 0.5);
+}
+.member-img {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+overflow: hidden;
+margin: 0 auto 15px;
+border: 3px solid #00aaff; 
+box-shadow: 0 4px 15px rgba(0, 170, 255, 0.7);
+}
+.member-img img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 50%;
+}
+.team-member h3 {
+font-size: 20px;
+color: #00aaff; 
+margin-bottom: 5px;
+}
+.team-member p {
+font-size: 16px;
+color: #b0c7ff; 
+}
+.social-icons {
+margin-top: 10px;
+}
+.social-icons a {
+margin: 0 8px;
+color: #00aaff; 
+font-size: 18px;
+transition: color 0.3s ease, transform 0.3s ease-in-out;
+}
+.social-icons a:hover {
+    color: #ffffff; 
+    transform: scale(1.2);
+}
+/* contact us */
+.form-container {
+    max-width: 400px;
+    background: #06105c; /* Dark theme background */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 50px auto;
+}
+.form-container h2 {
+    color: #fcfcfc;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+.form-container input,
+.form-container textarea {
+    width: 80%;
+    padding: 12px;
+    margin: 10px 0 ;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+.form-container input::placeholder,
+.form-container textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+.form-container input:focus,
+.form-container textarea:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid #00aaff;
+}
+.form-container textarea {
+    height: 120px;
+    resize: none;
+}
+.form-container button {
+    width: 80%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #00aaff;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.form-container button:hover {
+    background: white;
+    color: #030726;
+}
+h3{
+margin: 15px 0;
+font-size: 1.5rem;
+color: #00aaff;
+}
+p {
+font-size: 1rem;
+color: #f1f1f1;
+}
+footer {
+background-color: hsl(210, 100%, 12%);
+padding: 20px;
+margin-top: 20px;
+}
+</style>
+
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="logo-container">
+            <img class="logo" src="logo icon.webp" alt="Blue Black Team Logo">
+            <div class="logo-name">Blue Black Team</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Innovation Starts Here.</h1>
+                <p>Join us in our journey to transform ideas into reality through collaboration and technology.</p>
+                <button onclick="scrollToSection('about')">Learn More</button>
+            </div>
+            <div class="hero-image">
+                <img src="Hero_section_image.svg" alt="Innovation Idea">
+            </div>
+        </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about">
+        <h2>Who Are We?</h2>
+        <p><strong>Blue Black Team</strong> is more than just a name—it’s a movement, a mindset, a revolution.</p><p></p> We are the architects of innovation, the dreamers who dare to challenge the ordinary, and the creators who transform imagination into reality.</p>
+    
+        <div class="about-container">
+            <div class="about-box">
+                <h3>🔥 The Spark of Innovation</h3>
+                <p>We don’t follow trends—we create them. Our mission is to build solutions that redefine industries, push boundaries, and inspire the next generation of creators.</p>
+            </div>
+    
+            <div class="about-box">
+                <h3>🚀 Driven by Passion</h3>
+                <p>From brainstorming the wildest ideas to executing flawless solutions, our team thrives on passion. Every line of code, every pixel designed, and every decision made is fueled by dedication and a desire to make an impact.</p>
+            </div>
+    
+            <div class="about-box">
+                <h3>🌍 Innovation with Purpose</h3>
+                <p>We believe technology should serve a greater cause. Our projects aren’t just cool—they solve real problems, empower communities, and shape the future.</p>
+            </div>
+        </div>
+    
+        <p>We are the <strong>Blue Black Team</strong>. We dream, we build, we disrupt. <br><br> <em>Are you ready to be a part of something extraordinary?</em></p>
+    </section>
+
+    <!-- project section -->
+    <section id="projects">
+        <h2>🚀 Our Projects</h2>
+        <p>Explore some of our most exciting innovations that push the boundaries of technology and creativity.</p>
+        
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="ProjectCard.png" alt="Project 1">
+                <h3>🔹 Project One</h3>
+                <p>An AI-powered solution revolutionizing the way we interact with technology.</p>
+                <button class="project-btn">View More</button>
+            </div>
+    
+            <div class="project-card">
+                <img src="ProjectCard.png" alt="Project 2">
+                <h3>🔹 Project Two</h3>
+                <p>A groundbreaking UI/UX project enhancing user experience like never before.</p>
+                <button class="project-btn">View More</button>
+            </div>
+            <div class="project-card">
+                <img src="ProjectCard.png" alt="Project 1">
+                <h3>🔹 Project Three</h3>
+                <p>An AI-powered solution revolutionizing the way we interact with technology.</p>
+                <button class="project-btn">View More</button>
+            </div>
+        </div>
+    </section>
+    <!-- Team section -->
+    <section id="team">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="User_icon.png" alt="John Doe">
+                </div>
+                <h3>John Doe</h3>
+                <p>Lead Developer</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-img">
+                    <img src="User_icon.png" alt="Jane Smith">
+                </div>
+                <h3>Jane Smith</h3>
+                <p>UI/UX Designer</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+         <!-- contact section -->
+         <div class="form-container">
+            <form>
+                <h2>Contact Us</h2>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+       <!-- footer section -->
+    <footer>
+        <p>&copy; 2025 Blue Black Team. All rights reserved.</p>
+    </footer>
+
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+   </body>
+</html>
